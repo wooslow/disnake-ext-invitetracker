@@ -46,6 +46,7 @@ class InviteLogger():
     async def get_invite(self, member: disnake.Member):
         for join_invite in await member.guild.invites():
             for cach_invite in self.cache[member.guild.id].values():
-                if join_invite.code == cach_invite.code:
-                    self.cache[member.guild.id][cach_invite.code] = join_invite
-                    return cach_invite
+                if join_invite.uses > cach_invite.uses:
+                    if join_invite.code == cach_invite.code:
+                        cach_invite.uses += 1
+                        return join_invite

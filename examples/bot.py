@@ -1,13 +1,14 @@
+import disnake
 from disnake.ext import commands
 from disnake.ext.invitetracker import InviteLogger
 
 
-bot = commands.InteractionBot()
+bot = commands.InteractionBot(intents=disnake.Intents.all())
 invite = InviteLogger(bot)
 
 @bot.event
 async def on_member_join(member):
-    data = invite.get_invite(member)
-    await member.guild.text_channels[0].send(data.inviter)
+    data: disnake.Invite = await invite.get_invite(member)
+    print(data.inviter)
 
 bot.run("TOKEN")
