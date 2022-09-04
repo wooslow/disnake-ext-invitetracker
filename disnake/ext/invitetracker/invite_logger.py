@@ -1,5 +1,6 @@
 import disnake
 
+
 class InviteLogger():
     def __init__(self, bot):
         self.bot = bot
@@ -43,7 +44,7 @@ class InviteLogger():
             if invite.code == cach_invite.code:
                 self.cache[invite.guild.id].pop(invite.code)
 
-    async def get_invite(self, member: disnake.Member):
+    async def get_invite(self, member: disnake.Member) -> disnake.Invite | None:
         for join_invite in await member.guild.invites():
             for cach_invite in self.cache[member.guild.id].values():
                 if join_invite.uses > cach_invite.uses:
