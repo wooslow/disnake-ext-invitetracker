@@ -27,7 +27,7 @@ py -3 -m pip install -U disnake-ext-invitetracker
 - [Usage Examples](https://github.com/LukeFokin/disnake-ext-invitetracker/tree/main/examples)
 - [Disnake Server](https://discord.gg/disnake)
 - [Disnake [RU] Server](https://discord.gg/RrpKVNuRCc)
-- [Lukef#3842](https://discordapp.com/users/689205223306297416)
+- [Lukef#0001 & @Lukef](https://discordapp.com/users/175856311827693568)
 
 ## License
 
