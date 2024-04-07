@@ -23,13 +23,13 @@ class InviteTracker:
         self.cache: T = {}
 
         if self.auto_work:
-            self.bot.add_listener(self.load_invites, "on_ready")
-            self.bot.add_listener(self.add_guild, "on_guild_join")
-            self.bot.add_listener(self.remove_guild, "on_guild_remove")
-            self.bot.add_listener(self.create_invite, "on_invite_create")
-            self.bot.add_listener(self.delete_invite, "on_invite_delete")
+            self.bot.add_listener(self._load_invites, "on_ready")
+            self.bot.add_listener(self._add_guild, "on_guild_join")
+            self.bot.add_listener(self._remove_guild, "on_guild_remove")
+            self.bot.add_listener(self._create_invite, "on_invite_create")
+            self.bot.add_listener(self._delete_invite, "on_invite_delete")
 
-    async def load_invites(self) -> T:
+    async def _load_invites(self) -> T:
         """ Load all invites from a guild. """
         for guild in self.bot.guilds:
             try:
@@ -46,7 +46,7 @@ class InviteTracker:
 
         return self.cache
 
-    async def add_guild(self, guild: Guild) -> T:
+    async def _add_guild(self, guild: Guild) -> T:
         """
         Add a guild to the cache.
 
@@ -67,7 +67,7 @@ class InviteTracker:
 
         return self.cache
 
-    async def remove_guild(self, guild: Guild) -> T:
+    async def _remove_guild(self, guild: Guild) -> T:
         """
         Remove a guild from the cache.
 
@@ -83,7 +83,7 @@ class InviteTracker:
 
         return self.cache
 
-    async def create_invite(self, invite: Invite) -> T:
+    async def _create_invite(self, invite: Invite) -> T:
         """
         Create an invitation and add it to the cache.
 
@@ -99,7 +99,7 @@ class InviteTracker:
 
         return self.cache
 
-    async def delete_invite(self, invite: Invite) -> T:
+    async def _delete_invite(self, invite: Invite) -> T:
         """
         Delete an invitation from the cache.
 
