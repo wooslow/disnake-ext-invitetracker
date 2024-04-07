@@ -14,8 +14,6 @@ classifiers = [
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.6",
-    "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
@@ -42,7 +40,7 @@ packages = [
 ]
 
 project_urls = {
-    "Source": "https://github.com/LukeFokin/disnake-ext-invitetracker",
+    "Source": "https://github.com/earluv/disnake-ext-invitetracker",
 }
 
 _version_regex = r"^version = ('|\")((?:[0-9]+\.)*[0-9]+(?:\.?([a-z]+)(?:\.?[0-9])?)?)\1$"
@@ -80,7 +78,7 @@ setuptools.setup(
     name="disnake-ext-invitetracker",
     packages=packages,
     project_urls=project_urls,
-    python_requires=">=3.6.0",
-    url="https://github.com/LukeFokin/disnake-ext-invitetracker",
+    python_requires=">=3.8.0",
+    url="https://github.com/earluv/disnake-ext-invitetracker",
     version=version,
 )
