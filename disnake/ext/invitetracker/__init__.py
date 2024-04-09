@@ -1,6 +1,6 @@
 import collections
 
-from .invite_logger import *
+from .invite_tracker import *
 
 _VersionInfo = collections.namedtuple("_VersionInfo", "major release serial")
 

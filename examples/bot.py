@@ -1,6 +1,6 @@
 import disnake
 from disnake.ext import commands
-from disnake.ext.invitetracker import InviteLogger
+from disnake.ext.invitetracker import InviteTracker
 
 bot = commands.InteractionBot(intents=disnake.Intents.all())
 invite = InviteTracker(bot)
